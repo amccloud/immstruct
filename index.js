@@ -166,11 +166,14 @@ module.exports.Immstruct = Immstruct;
 module.exports.clear     = inst.clear.bind(inst);
 module.exports.remove    = inst.remove.bind(inst);
 module.exports.get       = inst.get.bind(inst);
-Object.defineProperty(module.exports, 'instances', {
-  get: function() { return inst.instances; },
-  enumerable: true,
-  configurable: true
-});
+
+try {
+  Object.defineProperty(module.exports, 'instances', {
+    get: function() { return inst.instances; },
+    enumerable: true,
+    configurable: true
+  });
+}
 
 function getInstance (obj, options) {
   if (typeof options.key === 'object') {
