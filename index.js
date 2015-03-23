@@ -173,7 +173,7 @@ try {
     enumerable: true,
     configurable: true
   });
-}
+} catch {}
 
 function getInstance (obj, options) {
   if (typeof options.key === 'object') {
